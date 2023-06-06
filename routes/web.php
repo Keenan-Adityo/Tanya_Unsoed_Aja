@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
+
+Route::get('/login', 'UserLoginController@showLoginForm')->name('login');
+Route::post('/login', 'UserLoginController@login');
+Route::post('/logout', 'UserLoginController@logout');

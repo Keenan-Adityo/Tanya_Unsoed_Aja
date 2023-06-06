@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/login', 'UserLoginController@showLoginForm')->name('login');
 Route::post('/login', 'UserLoginController@login');
 Route::post('/logout', 'UserLoginController@logout');
+
+Route::get('/chatroom', function () {
+    return view('chat_room');
+});

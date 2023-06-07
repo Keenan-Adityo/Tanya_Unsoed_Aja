@@ -38,12 +38,12 @@
       </div>
       <div class="flex flex-col container border-t h-full">
         <!-- chat left -->
-        <div class="max-w-min py-1 px-2 rounded-r-3xl rounded-tl-3xl roundedn-bl-sm bg-[#F6F1F1] my-2">
+        <div class="max-w-min py-1 px-3 rounded-r-3xl rounded-tl-3xl roundedn-bl-sm bg-[#F6F1F1] my-2">
           <p class="text-xl">ayam goreng enak sekafasuifbauofbvasolfbnqaofbqiowbfioqwbdoqbnf asbdnasjkbdqwuibd</p>
         </div>
         <!-- chat right  -->
-        <div class="max-w-min py-1 px-2 rounded-l-3xl rounded-tr-3xl rounded-br-sm bg-[#F6F1F1] place-self-end">
-          <p class="text-xl">ayam goreng enak sekafasuifbauofbvasolfbnqaofbqiowbfioqwbdoqbnf asbdnasjkbdqwuibd</p>
+        <div class="max-w-min py-1 px-3 rounded-l-3xl rounded-tr-3xl rounded-br-sm bg-[#FFD700] place-self-end">
+          <p class="text-xl text-white">ayam goreng enak sekafasuifbauofbvasolfbnqaofbqiowbfioqwbdoqbnf asbdnasjkbdqwuibd</p>
         </div>
       </div>
       <div class="container flex flex-row">

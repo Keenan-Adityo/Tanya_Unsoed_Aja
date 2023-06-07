@@ -33,7 +33,7 @@
 						</div>
 
 
-						<form id="form1" name="form1" class=" mb-3 mt-md-3" method="post">
+						<form id="form1" name="form1" class=" mb-3 mt-md-3" method="post" action="{{ route('user.login')}}">
 							@csrf
 							<div class="mb-3">
 								<label for="username" class="form-label"
@@ -58,7 +58,7 @@
 
 							<div style="position: relative; font-size: small;" class="mt-1">
 								<span class="text-primary mr-auto"> <a
-									href="/loginAdmin">Masuk Sebagai Admin</a>
+									href="/adminLogin">Masuk Sebagai Admin</a>
 							</div>
 						</form>
 						<br>

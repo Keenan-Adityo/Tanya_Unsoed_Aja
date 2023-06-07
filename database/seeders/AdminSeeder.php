@@ -19,6 +19,7 @@ class AdminSeeder extends Seeder
             DB::table('admin')->insert([
                 'username' => $faker->userName,
                 'password' => $faker->password(6,10),
+                'role'=> $faker->numberBetween(0,3),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

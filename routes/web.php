@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatroomController;
+use App\Http\Controllers\AdminLoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,17 +22,15 @@ Route::get('/loginAdmin', function () {
     return view('loginAdmin');
 });
 
-Route::post('/loginAdmin', [AdminLoginController::class, 'login']);
+
 
 Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/loginAdmin', 'AdminLoginController@index')->name('admin.login');
-    Route::post('/loginAdmin', 'AdminLoginController@login');
-    Route::post('/logoutAdmin', 'AdminLoginController@logout')->name('admin.logout');
-});
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
+Route::get('/adminLogin', [AdminLoginController::class, 'index']);
+Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.login');
+
 Route::get('/settings', [ChatroomController::class, 'settings']);

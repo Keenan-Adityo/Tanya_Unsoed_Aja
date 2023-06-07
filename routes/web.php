@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatroomController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\CSController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,7 @@ Route::get('/test', function () {
 
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
+Route::get('/customerService', [CSController::class, 'index']);
 Route::get('/adminLogin', [AdminLoginController::class, 'index']);
 Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.login');
 

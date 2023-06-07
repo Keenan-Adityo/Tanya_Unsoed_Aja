@@ -9,6 +9,7 @@ use App\Models\Admin;
 
 class AdminLoginController extends Controller
 {
+
     public function index()
     {
         return view('login');
@@ -16,20 +17,21 @@ class AdminLoginController extends Controller
 
     public function login(Request $request)
     {
-        $username = $request->input('username');
-        $password = $request->input('password');
+        $credentials = $request->validate([
+            'username' => 'required',
+            'password' => 'required'
+        ]);
 
-        // Retrieve the admin from the database
-        $admin = Admin::where('username', $username)->first();
-
-        // Check if the admin exists and verify the password
-        if ($admin && Hash::check($password, $admin->password)) {
-            // Authentication passed
-            return redirect()->intended('/admin/dashboard');
+        if(Auth::attempt($credentials))
+        {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard')
+                ->withSuccess('You have successfully logged in!');
         }
 
-        // Authentication failed
-        return redirect()->back()->withInput()->withErrors(['message' => 'Invalid credentials']);
+        return back()->withErrors([
+            'email' => 'Your provided credentials do not match in our records.',
+        ])->onlyInput('email');
     }
 
 

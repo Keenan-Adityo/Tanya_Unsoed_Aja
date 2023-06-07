@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatroomController;
 use App\Http\Controllers\AdminLoginController;
@@ -34,6 +35,7 @@ Route::get('/test', function () {
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
 Route::get('/customerService', [CSController::class, 'index']);
+Route::get('/adminChatroom', [AdminController::class, 'index']);
 Route::get('/adminLogin', [AdminLoginController::class, 'index']);
 Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/', [UserLoginController::class, 'login'])->name('user.login');

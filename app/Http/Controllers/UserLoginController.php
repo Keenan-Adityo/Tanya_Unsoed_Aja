@@ -13,25 +13,28 @@ class UserLoginController extends Controller
     {
         $username = $request->input('username');
         $password = $request->input('password');
-
-        // Retrieve the admin from the database
-        $user = User::where('username', $username)->first();
-
-        // Check if the user exists and verify the password
-        if ($user && Hash::check($password, $user->password)) {
-            // Authentication passed
-            return redirect()->intended('/test');
+        $data = User::where('username', $username)->first();
+        if ($data == null) {
+            return redirect()->back()->withErrors(['error' => 'Admin not found']);
         }
+        if ($password !== $data->password) {
+            return redirect()->back()->withErrors(['error' => 'Wrong password']);
+        }
+        $request->session()->put('user_id', $data->id_user);
 
-        // Authentication failed
-        return redirect()->back()->withInput()->withErrors(['message' => 'Username/Password Salah']);
+        return redirect('/chatroom');
     }
 
 
     public function logout(Request $request)
     {
-        Auth::guard('user')->logout();
+        Auth::logout();
 
+        // Clear the session data
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Redirect to the desired location after logout
         return redirect('/login');
     }
 }

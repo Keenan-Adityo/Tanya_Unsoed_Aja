@@ -8,6 +8,11 @@ class ChatroomController extends Controller
 {
     public function index()
     {
-        return view('chatroom');
+        return view('pages/user_chatroom');
+    }
+
+    public function settings()
+    {
+        return view('pages/user_settings');
     }
 }

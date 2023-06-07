@@ -34,3 +34,4 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
+Route::get('/settings', [ChatroomController::class, 'settings']);

@@ -32,3 +32,5 @@ Route::get('/test', function () {
 Route::get('/chatroom', [ChatroomController::class, 'index']);
 Route::get('/adminLogin', [AdminLoginController::class, 'index']);
 Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.login');
+
+Route::get('/settings', [ChatroomController::class, 'settings']);

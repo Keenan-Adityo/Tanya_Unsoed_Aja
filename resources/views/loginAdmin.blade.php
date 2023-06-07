@@ -8,7 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-<title>Login User | Tanya Unsoed Aja!</title>
+<title>Login Admin | Tanya Unsoed Aja!</title>
 
 </head>
 <body>
@@ -19,17 +19,13 @@
 				
 
 				<div class="row shadow ">
-					<div
-						class="col-lg-6 col-md-6 col-sm-12 card-none-color p-4 p-md-5 order-1 order-md-0">
+					<div class="col-lg-6 col-md-6 col-sm-12 card-none-color p-4 p-md-5 order-1 order-md-0">
 						<div class="text-center text-md-start">
 							<img src="{{ asset('images/logoUnsoed.png') }}" class="img-fluid mb-3 ml-md-4 ml-sm-5" width="60px" alt="Logo">
 
 							<p class="mb-0">Selamat Datang , </p>
-							<h4 style="font-weight: bolder;">di Aplikasi Tanya Unsoed Aja!</h4>
-							<p style="font-size: small; color: grey;">Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit. Nam congue dui ac elit tincidunt 
-                                consequat quis eget quam. Nulla tempor pharetra congue. 
-                              Nullam dictum luctus dolor.</p>
+							<h4 style="font-weight: bolder;">di Login Page Admin!</h4>
+							<p style="font-size: small; color: grey;"></p>
 						</div>
 
 
@@ -53,13 +49,14 @@
 								</div>
 							</div>
 							<div class="d-grid gap-2 mt-3">
-								<button type="submit" class="btn btn-primary">Masuk</button>
+								<button type="submit" class="btn btn-primary">Masuk Sebagai Admin</button>
 							</div>
 
 							<div style="position: relative; font-size: small;" class="mt-1">
 								<span class="text-primary mr-auto"> <a
-									href="/loginAdmin">Masuk Sebagai Admin</a>
+									href="/">Kembali</a>
 							</div>
+        
 						</form>
 						<br>
 						<br>
@@ -68,10 +65,8 @@
 
                         </div>
 								<div class="col-lg-6 col-md-6 col-sm-12 card-color p-4 p-md-5 order-0 order-md-1">
-									<div class="text-center text-md-start">
-										<br><br><br><br>
-									<img src="{{ asset('images/telefon.png') }}" class="img-fluid" style="object-fit: cover; width: 100%; height: 100%;" alt="Sekolah Image">
-									</div>
+                        			<div class="text-center text-md-start telefon-container">
+                            		<img src="{{ asset('images/telefon.png') }}" class="img-fluid" alt="Sekolah Image">
 								</div>
 							</div>
 						</div>

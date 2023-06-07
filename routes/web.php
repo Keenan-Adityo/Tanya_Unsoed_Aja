@@ -17,9 +17,21 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/login', 'UserLoginController@showLoginForm')->name('login');
-Route::post('/login', 'UserLoginController@login');
-Route::post('/logout', 'UserLoginController@logout');
+Route::get('/loginAdmin', function () {
+    return view('loginAdmin');
+});
+
+Route::post('/loginAdmin', [AdminLoginController::class, 'login']);
+
+Route::get('/test', function () {
+    return view('welcome');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/loginAdmin', 'AdminLoginController@index')->name('admin.login');
+    Route::post('/loginAdmin', 'AdminLoginController@login');
+    Route::post('/logoutAdmin', 'AdminLoginController@logout')->name('admin.logout');
+});
 
 Route::get('/chatroom', function () {
     return view('chat_room');

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ChatroomController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,6 +33,4 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/logoutAdmin', 'AdminLoginController@logout')->name('admin.logout');
 });
 
-Route::get('/chatroom', function () {
-    return view('chat_room');
-});
+Route::get('/chatroom', [ChatroomController::class, 'index']);

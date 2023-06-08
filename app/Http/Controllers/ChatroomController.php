@@ -16,6 +16,7 @@ class ChatroomController extends Controller
         $data = User::where('id_user', $id)->first();
         $messages = Message::where('id_receiver', $id)
             ->orWhere('id_sender', $id)
+            ->orderBy('id', 'desc')
             ->get();
         $request->session()->put('messages', $messages);
         $request->session()->put('username', $data->username);
@@ -35,6 +36,8 @@ class ChatroomController extends Controller
             'id_receiver' => 'admin',
             'content' => $request->message,
         ]);
+        $user = User::where('id_user', $id)->first();
+        $user->touch();
         return redirect('/chatroom');
     }
 }

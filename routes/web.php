@@ -42,3 +42,7 @@ Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.
 Route::post('/', [UserLoginController::class, 'login'])->name('user.login');
 
 Route::get('/settings', [ChatroomController::class, 'settings']);
+
+Route::get('/datauser', function () {
+    return view('pages/admin_datauser');
+});

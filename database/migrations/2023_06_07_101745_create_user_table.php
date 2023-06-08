@@ -11,7 +11,7 @@ Class CreateUserTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id_user');
             $table->string('username');
             $table->string('password');
@@ -28,6 +28,6 @@ Class CreateUserTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('users');
     }
 };

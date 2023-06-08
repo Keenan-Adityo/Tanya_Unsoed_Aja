@@ -18,7 +18,7 @@ class AdminSeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('admin')->insert([
+            DB::table('admins')->insert([
                 'username' => $faker->userName,
                 'password' => $faker->password(6,10),
                 'role'=> rand(1,2),

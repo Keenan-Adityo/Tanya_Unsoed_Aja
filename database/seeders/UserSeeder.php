@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         $faker = Faker::create();
 
         for ($i = 1; $i <= 100; $i++) {
-            DB::table('user')->insert([
+            DB::table('users')->insert([
                 'username' => $faker->userName,
                 'password' => $faker->password(6,10),
                 'email' => $faker->unique()->safeEmail,

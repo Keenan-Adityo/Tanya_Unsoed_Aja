@@ -29,7 +29,7 @@
     </div>
     <div class="flex flex-col container border-2 w-full ml-6 bg-white rounded-3xl p-6">
       <p class="text-4xl font-bold">Pengaturan</p>
-      <a href="" class="border-2 bg-red-600 rounded-xl my-2 p-2 max-w-min">
+      <a href="/" class="border-2 bg-red-600 rounded-xl my-2 p-2 max-w-min">
         <button type="submit" class="">
           <p class="text-white">Keluar</p>
         </button>

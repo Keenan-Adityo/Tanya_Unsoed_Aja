@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -16,4 +17,8 @@ class User extends Authenticatable
     protected $fillable = ['username', 'password', 'email', 'nim', 'alamat', 'semester'];
     protected $hidden = ['password'];
 
+    public function messages(): HasMany
+    {
+        return $this->hasMany(Message::class);
+    }
 }

@@ -34,6 +34,7 @@ Route::get('/test', function () {
 
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
+Route::post('/chatroom', [ChatroomController::class, 'sendMessage']);
 Route::get('/customerService', [CSController::class, 'index']);
 Route::get('/adminChatroom', [AdminController::class, 'index']);
 Route::get('/adminLogin', [AdminLoginController::class, 'index']);

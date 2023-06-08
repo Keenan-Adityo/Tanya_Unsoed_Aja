@@ -32,53 +32,55 @@
         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
           <img src="{{ asset('icon/search.svg') }}" class="h-5 w-5">
         </span>
-        <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full container border border-slate-300 rounded-3xl py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Search for anything..." type="text" name="search" />
+        <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full container border border-slate-300 rounded-3xl py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Cari Mahasiswa..." type="text" name="search" />
       </label>
       <div class="flex flex-col w-full h-full container border-2  bg-white rounded-3xl p-4 mt-3">
         <p class="text-2xl font-semibold">Mahasiswa</p>
-
-        <div class="flex flex-row border-b-2 mt-2 pb-1">
+        @foreach ($user_data as $user)
+        <a href="/customerService/<?= $user->id_user; ?> " class="flex flex-row border-b-2 mt-2 pb-1">
           <div class="container rounded-full w-16"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12 "></div>
           <div class="container flex flex-col place-content-center ml-2">
-            <p class="text-lg font-semibold text-left w-full">Keenan</p>
+            <p class="text-lg font-semibold text-left w-full">{{$user->username}}</p>
           </div>
           <div class="container rounded-full bg-white w-9 h-9 my-auto"><img src="{{ asset('images/logoUnsoed.png') }}"></div>
-        </div>
+        </a>
 
-        <div class="flex flex-row border-b-2 mt-2 pb-1">
-          <div class="container rounded-full w-16"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12 "></div>
-          <div class="container flex flex-col place-content-center ml-2">
-            <p class="text-lg font-semibold text-left w-full">Keenan</p>
-          </div>
-          <div class="container rounded-full bg-white w-9 h-9 my-auto"><img src="{{ asset('images/logoUnsoed.png') }}"></div>
-        </div>
+        @endforeach
       </div>
 
     </div>
 
-    <div class="flex flex-col container border-2 w-full ml-6 bg-white rounded-3xl p-6">
+    <div class="flex flex-col container border-2 w-full ml-6 bg-white rounded-3xl p-6 ">
+      @if ($chatroom != 0)
       <div class="flex flex-row">
         <div class="container rounded-full bg-white w-20 h-20 "><img src="{{ asset('images/logoUnsoed.png') }}"></div>
         <div class="container flex flex-col place-content-center ml-2">
-          <p class="text-lg font-semibold">Keenan</p>
-          <p class="text-lg font-normal">onlen</p>
+          <p class="text-lg font-semibold">{{$username}}</p>
+          <p class="text-lg font-normal">Online</p>
         </div>
         <div class="container rounded-full bg-white w-20 h-20"><img src="{{ asset('icon/threedot.png') }}"></div>
       </div>
-      <div class="flex flex-col container border-t h-full">
-        <!-- chat left -->
-        <div class="max-w-min py-1 px-3 rounded-r-3xl rounded-tl-3xl roundedn-bl-sm bg-[#F6F1F1] my-2">
-          <p class="text-xl">ayam goreng enak sekafasuifbauofbvasolfbnqaofbqiowbfioqwbdoqbnf asbdnasjkbdqwuibd</p>
+      <div class="flex flex-col-reverse container border-t h-full overflow-y-auto" id="chat">
+        @foreach ($messages as $message)
+        @if ($message->id_sender == "admin")
+        <div class="max-w-fit1 py-1 px-3 my-1 rounded-l-3xl rounded-tr-3xl rounded-br-sm bg-[#FFD700] place-self-end">
+          <p class="text-xl text-white">{{$message->content}}</p>
         </div>
-        <!-- chat right  -->
-        <div class="max-w-min py-1 px-3 rounded-l-3xl rounded-tr-3xl rounded-br-sm bg-[#FFD700] place-self-end">
-          <p class="text-xl text-white">ayam goreng enak sekafasuifbauofbvasolfbnqaofbqiowbfioqwbdoqbnf asbdnasjkbdqwuibd</p>
+        @else
+        <div class="max-w-fit py-1 px-3 my-1 rounded-r-3xl rounded-tl-3xl roundedn-bl-sm bg-[#F6F1F1] my-2">
+          <p class="text-xl">{{$message->content}}</p>
         </div>
+        @endif
+        @endforeach
       </div>
-      <div class="container flex flex-row">
+      <form action="" method="post" class="container flex flex-row mt-2">
+        @csrf
         <input type="text" name="message" id="message" class="w-full border-2 rounded-lg h-12 px-2">
         <button type="submit" class="bg-[#19A7CE] rounded-lg p-2 ml-4"><img src="{{ asset('icon/send.png') }}" class="h-6 w-9 mx-auto"></button>
-      </div>
+      </form>
+      @else 
+      <img src="{{ asset('images/logoUnsoed.png') }}" class="my-auto mx-auto h-full opacity-30">
+      @endif
     </div>
   </div>
 

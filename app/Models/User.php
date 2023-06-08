@@ -21,4 +21,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class);
     }
+
+    public static function search($query)
+    {
+        return self::query()
+            ->where('username', 'like', '%' . $query . '%')
+            ->whereRaw('created_at <> updated_at')
+            ->get();
+    }
 }

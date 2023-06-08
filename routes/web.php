@@ -35,8 +35,10 @@ Route::get('/test', function () {
 
 Route::get('/chatroom', [ChatroomController::class, 'index']);
 Route::post('/chatroom', [ChatroomController::class, 'sendMessage']);
-Route::get('/customerService', [CSController::class, 'index']);
-Route::get('/adminChatroom', [AdminController::class, 'index']);
+Route::get('/customerService/{chatroom}', [CSController::class, 'index']);
+Route::post('/customerService/{chatroom}', [CSController::class, 'sendtoUser']);
+Route::get('/adminChatroom/{chatroom}', [AdminController::class, 'index']);
+Route::post('/adminChatroom/{chatroom}', [AdminController::class, 'sendtoUser']);
 Route::get('/adminLogin', [AdminLoginController::class, 'index']);
 Route::post('/loginAdmin', [AdminLoginController::class, 'login'])->name('admin.login');
 Route::post('/', [UserLoginController::class, 'login'])->name('user.login');

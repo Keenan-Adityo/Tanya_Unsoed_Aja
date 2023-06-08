@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -19,7 +21,7 @@ class AdminSeeder extends Seeder
             DB::table('admin')->insert([
                 'username' => $faker->userName,
                 'password' => $faker->password(6,10),
-                'role'=> $faker->numberBetween(0,3),
+                'role'=> rand(1,2),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

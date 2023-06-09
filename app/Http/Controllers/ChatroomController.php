@@ -13,14 +13,16 @@ class ChatroomController extends Controller
     public function index(Request $request)
     {
         $id = session()->get('user_id');
-        $data = User::where('id_user', $id)->first();
+        $user = User::where('id_user', $id)->first();
         $messages = Message::where('id_receiver', $id)
             ->orWhere('id_sender', $id)
             ->orderBy('id', 'desc')
             ->get();
-        $request->session()->put('messages', $messages);
-        $request->session()->put('username', $data->username);
-        return view('pages/user_chatroom');
+        $data = [
+            'username' => $user->username,
+            'messages' => $messages
+        ];
+        return view('pages/user_chatroom', $data);
     }
 
     public function settings()

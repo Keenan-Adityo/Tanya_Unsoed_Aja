@@ -48,3 +48,7 @@ Route::get('/settings', [ChatroomController::class, 'settings']);
 Route::get('/datauser', function () {
     return view('pages/admin_datauser');
 });
+
+Route::get('/datapesan', function () {
+    return view('pages/admin_datapesan');
+});

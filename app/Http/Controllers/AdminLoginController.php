@@ -29,7 +29,7 @@ class AdminLoginController extends Controller
         }
         $request->session()->put('admin_id', $data->id_admin);
         if($data->role == 1) {
-            return redirect('/adminChatroom/0');
+            return redirect('/datauser');
         } else {
             return redirect('/customerService/0');
         }

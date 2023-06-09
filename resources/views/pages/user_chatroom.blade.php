@@ -37,7 +37,7 @@
         <div class="container rounded-full bg-white w-20 h-20"><img src="{{ asset('icon/threedot.png') }}"></div>
       </div>
       <div class="flex flex-col-reverse container border-t h-full overflow-y-auto" id="chat">
-        @foreach (session()->get('messages') as $message)
+        @foreach ($messages as $message)
         @if ($message->id_sender != "admin")
         <div class="max-w-fit1 py-1 px-3 my-1 rounded-l-3xl rounded-tr-3xl rounded-br-sm bg-[#FFD700] place-self-end">
           <p class="text-xl text-white">{{$message->content}}</p>

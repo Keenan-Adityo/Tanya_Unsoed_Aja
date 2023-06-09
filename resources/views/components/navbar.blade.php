@@ -7,13 +7,13 @@
             </a>
         </div>
         <div class="flex container justify-end">
-            <a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+            <a href="/datauser" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
                 <p class="text-2xl">Data User</p>
             </a>
-            <a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+            <a href="/datapesan" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
                 <p class="text-2xl">Data Pesan</p>
             </a>
-            <a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+            <a href="/adminChatroom/0" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
                 <p class="text-2xl">Chat Room</p>
             </a>
             <a href="/adminLogin" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">

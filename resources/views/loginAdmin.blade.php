@@ -10,7 +10,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
+	<script src="https://cdn.tailwindcss.com"></script>
+	
 	<title>Login Admin | Tanya Unsoed Aja!</title>
 
 </head>
@@ -44,7 +45,7 @@
 									<input id="password" name="password" class="form-control rounded-end" tabindex="2" style="font-size: small;" placeholder="Password" type="password" value="" autocomplete="off" />
 								</div>
 							</div>
-							<div class="d-grid gap-2 mt-3">
+							<div class="d-grid gap-2 mt-3 bg-[#FFD700]">
 								<button type="submit" class="btn btn-primary">Masuk Sebagai Admin</button>
 							</div>
 							@if ($errors->any())

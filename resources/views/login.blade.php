@@ -8,6 +8,8 @@
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
 <title>Login User | Tanya Unsoed Aja!</title>
 
 </head>
@@ -26,10 +28,7 @@
 
 							<p class="mb-0">Selamat Datang , </p>
 							<h4 style="font-weight: bolder;">di Aplikasi Tanya Unsoed Aja!</h4>
-							<p style="font-size: small; color: grey;">Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit. Nam congue dui ac elit tincidunt 
-                                consequat quis eget quam. Nulla tempor pharetra congue. 
-                              Nullam dictum luctus dolor.</p>
+							<p style="font-size: small; color: grey;">Tanya UNSOED Aja (TUA) adalah sebuah sistem layanan akademik untuk seluruh mahasiswa Universitas Jendral Soedirman.</p>
 						</div>
 
 
@@ -52,10 +51,18 @@
 									<input id="password" name="password" class="form-control rounded-end" tabindex="2" style="font-size: small;" placeholder="Password" type="password" value="" autocomplete="off"/>
 								</div>
 							</div>
-							<div class="d-grid gap-2 mt-3">
+							<div class="d-grid gap-2 mt-3 bg-[#FFD700]">
 								<button type="submit" class="btn btn-primary">Masuk</button>
 							</div>
-
+							@if ($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->all() as $error)
+									<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+							@endif
 							<div style="position: relative; font-size: small;" class="mt-1">
 								<span class="text-primary mr-auto"> <a
 									href="/adminLogin">Masuk Sebagai Admin</a>

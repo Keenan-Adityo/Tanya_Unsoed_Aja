@@ -28,7 +28,12 @@ class AdminLoginController extends Controller
             return redirect()->back()->withErrors(['error' => 'Wrong password']);
         }
         $request->session()->put('admin_id', $data->id_admin);
-        return redirect('/test');
+        if($data->role == 1) {
+            return redirect('/datauser');
+        } else {
+            return redirect('/customerService/0');
+        }
+        
     }
 
     public function logout(Request $request)

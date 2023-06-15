@@ -38,18 +38,18 @@
 			/*pl-4*/
 			padding-right: 1rem;
 			/*pl-4*/
-			padding-top: .5rem;
+			padding-top: .4rem;
 			/*pl-2*/
-			padding-bottom: .5rem;
+			padding-bottom: .4rem;
 			/*pl-2*/
 			line-height: 1.25;
 			/*leading-tight*/
 			border-width: 2px;
 			/*border-2*/
-			border-radius: .25rem;
+			border-radius: .45rem;
 			border-color: #edf2f7;
 			/*border-gray-200*/
-			background-color: #edf2f7;
+			background-color: #dadee2;
 			/*bg-gray-200*/
 		}
 
@@ -143,7 +143,7 @@
 			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;" >
 				<thead>
 					<tr bgcolor="#A9A9A9">
-                        <th  class="centered-header" data-priority="1"> No </th>
+                        <th class="centered-header" data-priority="1">No</th>
 						<th class="centered-header" data-priority="2">ID_User</th>
 						<th class="centered-header" data-priority="3">Username</th>
 						<th class="centered-header" data-priority="4">Password</th>
@@ -151,6 +151,9 @@
 						<th class="centered-header" data-priority="6">NIM</th>
 						<th class="centered-header" data-priority="7">Alamat</th>
                         <th class="centered-header" data-priority="8">Semester</th>
+                        <th class="centered-header" data-priority="9">Created At</th>
+                        <th class="centered-header" data-priority="10">Updated At</th>
+
 
 					</tr>
 				</thead>
@@ -164,6 +167,8 @@
 					  <td></td>
 					  <td></td>
                       <td></td>
+                      <td></td>
+                      <td></td>
 					</tr> 
 		  
 					<tr>
@@ -174,6 +179,8 @@
 					  <td></td>
 					  <td></td>
 					  <td></td>
+                      <td></td>
+                      <td></td>
                       <td></td>
 					</tr>
 				  </tbody>

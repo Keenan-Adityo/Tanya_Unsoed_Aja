@@ -38,9 +38,9 @@
 			/*pl-4*/
 			padding-right: 1rem;
 			/*pl-4*/
-			padding-top: .5rem;
+			padding-top: .4rem;
 			/*pl-2*/
-			padding-bottom: .5rem;
+			padding-bottom: .4rem;
 			/*pl-2*/
 			line-height: 1.25;
 			/*leading-tight*/
@@ -49,8 +49,7 @@
 			border-radius: .25rem;
 			border-color: #edf2f7;
 			/*border-gray-200*/
-			background-color: #edf2f7;
-			/*bg-gray-200*/
+			background-color: #dadee2;
 		}
 
 		/*Row Hover*/
@@ -144,10 +143,12 @@
 				<thead>
 					<tr bgcolor="#A9A9A9">
 					  <th class="centered-header" data-priority="1">No</th>
-					  <th class="centered-header" data-priority="4">ID_Pesan</th>
-					  <th class="centered-header" data-priority="4">ID_Pengirim</th>
-					  <th class="centered-header" data-priority="5">ID_Penerima</th>
-					  <th class="centered-header" data-priority="7">Isi_Pesan</th>
+					  <th class="centered-header" data-priority="2">ID_Pesan</th>
+					  <th class="centered-header" data-priority="3">ID_Pengirim</th>
+					  <th class="centered-header" data-priority="4">ID_Penerima</th>
+					  <th class="centered-header" data-priority="5">Isi_Pesan</th>
+					  <th class="centered-header" data-priority="6">Created At</th>
+					  <th class="centered-header" data-priority="7">Updated At</th>
 					</tr>
 				  </thead>
 				  
@@ -158,9 +159,13 @@
 					  <td></td>
 					  <td></td>
 					  <td></td>
+					  <td></td>
+					  <td></td>
 					</tr> 
 		  
 					<tr>
+					  <td></td>
+					  <td></td>
 					  <td></td>
 					  <td></td>
 					  <td></td>

@@ -15,10 +15,10 @@ class UserLoginController extends Controller
         $password = $request->input('password');
         $data = User::where('username', $username)->first();
         if ($data == null) {
-            return redirect()->back()->withErrors(['error' => 'Admin not found']);
+            return redirect()->back()->withErrors(['error' => 'User tidak ditemukan']);
         }
         if ($password !== $data->password) {
-            return redirect()->back()->withErrors(['error' => 'Wrong password']);
+            return redirect()->back()->withErrors(['error' => 'Password Salah']);
         }
         $request->session()->put('user_id', $data->id_user);
 

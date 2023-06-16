@@ -10,7 +10,7 @@ class Auth
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if(!$request->session()->get('user_id')) {
+        if(!$request->session()->get('user_id') && !$request->session()->get('admin_id')) {
             return redirect('/');
         }
         return $next($request);

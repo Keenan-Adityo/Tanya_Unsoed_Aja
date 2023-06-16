@@ -35,6 +35,6 @@ class UserLoginController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect to the desired location after logout
-        return redirect('/login');
+        return redirect('/');
     }
 }

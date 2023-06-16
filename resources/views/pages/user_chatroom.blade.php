@@ -22,7 +22,7 @@
         <a href="/settings">
           <div class="container p-4"><img src="{{ asset('icon/settings.png') }}" class="mx-auto"></div>
         </a>
-        <a href="/">
+        <a href="/userLogout">
           <div class="container p-4"><img src="{{ asset('icon/logout.png') }}" class="mx-auto"></div>
         </a>
       </div>

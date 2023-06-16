@@ -18,7 +18,7 @@
       </a>
     </div>
     <div class="flex container justify-end">
-      <a href="/adminLogin" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">
+      <a href="/adminLogout" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">
         <button type="submit" class="">
           <p class="text-white">Logout</p>
         </button><img src="{{ asset('icon/logout.png') }}" class="w-8 h-8 ml-2">
@@ -43,7 +43,7 @@
           var contacts = <?php  ?> @json($user_data);
 
           function searchContacts(query) {
-            query = query.toLowerCase(); 
+            query = query.toLowerCase();
 
             if (query.length === 0) {
               return contacts;
@@ -67,7 +67,7 @@
             const searchInput = document.getElementById('search');
             const query = searchInput.value.trim().toLowerCase();
             const resultsList = document.getElementById('resultsList');
-            resultsList.innerHTML = ''; 
+            resultsList.innerHTML = '';
 
             const matchingContacts = searchContacts(query);
 

@@ -16,7 +16,7 @@
             <a href="/adminChatroom/0" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
                 <p class="text-2xl">Chat Room</p>
             </a>
-            <a href="/adminLogin" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">
+            <a href="/adminLogout" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">
                 <button type="submit" class="">
                     <p class="text-white">Logout</p>
                 </button><img src="{{ asset('icon/logout.png') }}" class="w-8 h-8 ml-2">

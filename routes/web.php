@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\CSController;
 use App\Http\Controllers\UserLoginController;
 use App\Http\Middleware\Auth;
+use App\Http\Middleware\AuthAdmin;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::middleware([Auth::class])->group(function () {
     Route::post('/chatroom', [ChatroomController::class, 'sendMessage']);
     Route::get('/settings', [ChatroomController::class, 'settings']);
     Route::get('/userLogout', [UserLoginController::class, 'logout']);
+});
+Route::middleware([AuthAdmin::class])->group(function () {
     Route::get('/customerService/{chatroom}', [CSController::class, 'index']);
     Route::post('/customerService/{chatroom}', [CSController::class, 'sendtoUser']);
     Route::get('/adminChatroom/{chatroom}', [AdminController::class, 'index']);

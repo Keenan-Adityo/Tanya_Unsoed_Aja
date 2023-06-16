@@ -10,9 +10,34 @@
 </head>
 
 <body class="hero bg-[#F6F1F1]">
-  <x-navbar />
+  <div>
+    <nav class="flex justify-between bg-[#FFD700] px-2">
+      <div class="flex flex-row container">
+        <a href="" class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12"></a>
+        <a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+          <p class="text-2xl">Tanya Unsoed Aja!</p>
+        </a>
+      </div>
+      <div class="flex container justify-end">
+        <a href="/datauser" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+          <p class="text-2xl">Data User</p>
+        </a>
+        <a href="/datapesan" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+          <p class="text-2xl">Data Pesan</p>
+        </a>
+        <a href="/adminChatroom/0" class="flex flex-row bg-gradient-to-r from-green-400 to-blue-500 rounded-xl my-2 p-2">
+          <p class="text-xl text-white font-semibold">Chat Room</p>
+        </a>
+        <a href="/adminLogout" class="flex flex-row bg-red-600 rounded-xl my-2 p-2 mx-3">
+          <button type="submit" class="">
+            <p class="text-white">Logout</p>
+          </button><img src="{{ asset('icon/logout.png') }}" class="w-8 h-8 ml-2">
+        </a>
+      </div>
+    </nav>
+  </div>
   <div class="flex flex-row py-8 px-14 h-full">
-  <div class="flex flex-col w-96 mr-3">
+    <div class="flex flex-col w-96 mr-3">
       <label class="relative block">
         <span class="sr-only">Search</span>
         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -29,7 +54,7 @@
           var contacts = <?php  ?> @json($user_data);
 
           function searchContacts(query) {
-            query = query.toLowerCase(); 
+            query = query.toLowerCase();
 
             if (query.length === 0) {
               return contacts;
@@ -53,7 +78,7 @@
             const searchInput = document.getElementById('search');
             const query = searchInput.value.trim().toLowerCase();
             const resultsList = document.getElementById('resultsList');
-            resultsList.innerHTML = ''; 
+            resultsList.innerHTML = '';
 
             const matchingContacts = searchContacts(query);
 

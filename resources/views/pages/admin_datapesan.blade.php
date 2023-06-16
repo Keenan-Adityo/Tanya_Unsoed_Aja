@@ -122,7 +122,32 @@
 </head>
 
 <body class="hero bg-[#F6F1F1]">
-	<x-navbar />
+	<div>
+		<nav class="flex justify-between bg-[#FFD700] px-2">
+			<div class="flex flex-row container">
+				<a href="" class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12"></a>
+				<a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+					<p class="text-2xl">Tanya Unsoed Aja!</p>
+				</a>
+			</div>
+			<div class="flex container justify-end">
+				<a href="/datauser" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+					<p class="text-2xl">Data User</p>
+				</a>
+				<a href="/datapesan" class="flex flex-row bg-gradient-to-r from-green-400 to-blue-500 rounded-xl my-2 p-2">
+					<p class="text-xl text-white font-semibold">Data Pesan</p>
+				</a>
+				<a href="/adminChatroom/0" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+					<p class="text-2xl">Chat Room</p>
+				</a>
+				<a href="/adminLogout" class="flex flex-row bg-red-600 rounded-xl my-2 p-2">
+					<button type="submit" class="">
+						<p class="text-white">Logout</p>
+					</button><img src="{{ asset('icon/logout.png') }}" class="w-8 h-8 ml-2">
+				</a>
+			</div>
+		</nav>
+	</div>
 	<div class="flex mt-5">
 
 		<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">

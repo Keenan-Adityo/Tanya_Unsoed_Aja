@@ -12,8 +12,8 @@
 <body class="hero bg-[#F6F1F1]">
   <nav class="flex justify-between bg-[#FFD700] px-2">
     <div class="flex flex-row container">
-      <a href="/dashboard" class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12"></a>
-      <a href="/team" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
+      <a href="" class="font-bold px-3 py-2 text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12"></a>
+      <a href="" class="font-bold px-3 py-2 my-auto text-slate-700 rounded-lg hover:bg-slate-100 hover:text-slate-900">
         <p class="text-2xl">Tanya Unsoed Aja!</p>
       </a>
     </div>

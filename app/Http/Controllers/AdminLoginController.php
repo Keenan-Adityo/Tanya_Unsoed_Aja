@@ -22,10 +22,10 @@ class AdminLoginController extends Controller
         $data = Admin::where('username', $username)->first();
         //dd($data);
         if ($data == null) {
-            return redirect()->back()->withErrors(['error' => 'Admin not found']);
+            return redirect()->back()->withErrors(['error' => 'Admin tidak ditemukan']);
         }
         if ($password !== $data->password) {
-            return redirect()->back()->withErrors(['error' => 'Wrong password']);
+            return redirect()->back()->withErrors(['error' => 'Password Salah']);
         }
         $request->session()->put('admin_id', $data->id_admin);
         if($data->role == 1) {

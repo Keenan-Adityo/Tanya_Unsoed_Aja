@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\DB;
 
 class ChatroomController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
+
     public function index(Request $request)
     {
         $id = session()->get('user_id');

@@ -33,7 +33,7 @@ Route::get('/test', function () {
 });
 
 
-Route::get('/chatroom', [ChatroomController::class, 'index']);
+Route::get('/chatroom', ['middleware' => 'auth', ChatroomController::class, 'index']);
 Route::post('/chatroom', [ChatroomController::class, 'sendMessage']);
 Route::get('/customerService/{chatroom}', [CSController::class, 'index']);
 Route::post('/customerService/{chatroom}', [CSController::class, 'sendtoUser']);
@@ -45,10 +45,5 @@ Route::post('/', [UserLoginController::class, 'login'])->name('user.login');
 
 Route::get('/settings', [ChatroomController::class, 'settings']);
 
-Route::get('/datauser', function () {
-    return view('pages/admin_datauser');
-});
-
-Route::get('/datapesan', function () {
-    return view('pages/admin_datapesan');
-});
+Route::get('/datauser', [AdminController::class, 'datauser']);
+Route::get('/datapesan', [AdminController::class, 'datapesan']);

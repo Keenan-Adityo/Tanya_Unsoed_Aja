@@ -6,9 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title> Admin | Data Pesan </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
@@ -23,11 +23,11 @@
 	<style>
 		/*Overrides for Tailwind CSS */
 
-        /*Agar tabel berada di tengah halaman*/
-        /*Align center text in th*/
+		/*Agar tabel berada di tengah halaman*/
+		/*Align center text in th*/
 		.centered-header {
-    		text-align: center;
-  		}
+			text-align: center;
+		}
 
 		/*Form fields*/
 		.dataTables_wrapper select,
@@ -120,91 +120,80 @@
 
 
 </head>
+
 <body class="hero bg-[#F6F1F1]">
-    <x-navbar/>
-    <div class="flex mt-5">
+	<x-navbar />
+	<div class="flex mt-5">
 
-<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
-
-
-	<!--Container-->
-	<div class="container w-full md:w-5/5 xl:w-4/5  mx-auto px-10">
-
-		<!--Title-->
-		<h1 class="flex items-center font-sans font-bold break-normal text-black-500 px-2 py-8 text-xl md:text-2xl">
-			Data Pesan
-		</h1>
-
-		<!--Card-->
-		<div id='recipients' class="p-4 mt-2 lg:mt-0 rounded shadow bg-white">
+		<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
 
 
-			<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;" >
-				<thead>
-					<tr bgcolor="#A9A9A9">
-					  <th class="centered-header" data-priority="1">No</th>
-					  <th class="centered-header" data-priority="2">ID_Pesan</th>
-					  <th class="centered-header" data-priority="3">ID_Pengirim</th>
-					  <th class="centered-header" data-priority="4">ID_Penerima</th>
-					  <th class="centered-header" data-priority="5">Isi_Pesan</th>
-					  <th class="centered-header" data-priority="6">Created At</th>
-					  <th class="centered-header" data-priority="7">Updated At</th>
-					</tr>
-				  </thead>
-				  
-				  <tbody>
-					<tr>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					</tr> 
-		  
-					<tr>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					  <td></td>
-					</tr>
-				  </tbody> 
-		  
-				</table>
-		  
-		  
-			  </div>
-			  <!--/Card-->
-		  
-		  
+			<!--Container-->
+			<div class="container w-full md:w-5/5 xl:w-4/5  mx-auto px-10">
+
+				<!--Title-->
+				<h1 class="flex items-center font-sans font-bold break-normal text-black-500 px-2 py-8 text-xl md:text-2xl">
+					Data Pesan
+				</h1>
+
+				<!--Card-->
+				<div id='recipients' class="p-4 mt-2 lg:mt-0 rounded shadow bg-white">
+
+
+					<table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+						<thead>
+							<tr bgcolor="#A9A9A9">
+								<th class="centered-header" data-priority="1">No</th>
+								<th class="centered-header" data-priority="2">ID_Pesan</th>
+								<th class="centered-header" data-priority="3">ID_Pengirim</th>
+								<th class="centered-header" data-priority="4">ID_Penerima</th>
+								<th class="centered-header" data-priority="5">Isi_Pesan</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							@foreach($messages as $message)
+							<tr>
+								<td>{{$number++}}</td>
+								<td>{{$message->id}} </td>
+								<td>{{$message->id_sender}}</td>
+								<td>{{$message->id_receiver}}</td>
+								<td>{{$message->content}}</td>
+							</tr>
+							@endforeach
+						</tbody>
+
+					</table>
+
+
+				</div>
+				<!--/Card-->
+
+
 			</div>
 			<!--/container-->
-		  
-		  
-		  
-		  
-		  
+
+
+
+
+
 			<!-- jQuery -->
 			<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		  
+
 			<!--Datatables -->
 			<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 			<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
 			<script>
-			  $(document).ready(function() {
-		  
-				var table = $('#example').DataTable({
-					responsive: true
-				  })
-				  .columns.adjust()
-				  .responsive.recalc();
-			  });
+				$(document).ready(function() {
+
+					var table = $('#example').DataTable({
+							responsive: true
+						})
+						.columns.adjust()
+						.responsive.recalc();
+				});
 			</script>
-		  
-		  </body>
-		  
-		  </html>
+
+		</body>
+
+</html>

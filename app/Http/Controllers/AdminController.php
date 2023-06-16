@@ -50,4 +50,26 @@ class AdminController extends Controller
         $user->touch();
         return redirect("/adminChatroom/$chatroom");
     }
+
+    public function datauser()
+    {
+        $userData = User::query()
+            ->get();
+        $data = [
+            'userData' => $userData,
+            'number' => 1
+        ];
+        return view('pages/admin_datauser', $data);
+    }
+
+    public function datapesan()
+    {
+        $messages = Message::query()
+            ->get();
+        $data = [
+            'messages' => $messages,
+            'number' => 1
+        ];
+        return view('pages/admin_datapesan', $data);
+    }
 }

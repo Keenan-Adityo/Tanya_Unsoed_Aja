@@ -10,28 +10,80 @@
 </head>
 
 <body class="hero bg-[#F6F1F1]">
-  <x-navbar/>  
+  <x-navbar />
   <div class="flex flex-row py-8 px-14 h-full">
-    <div class="flex flex-col w-96 mr-3">
+  <div class="flex flex-col w-96 mr-3">
       <label class="relative block">
         <span class="sr-only">Search</span>
         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
           <img src="{{ asset('icon/search.svg') }}" class="h-5 w-5">
         </span>
-        <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full container border border-slate-300 rounded-3xl py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Cari Mahasiswa..." type="text" name="search" />
+        <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full container border border-slate-300 rounded-3xl py-3 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Cari Mahasiswa..." type="text" name="search" id="search" />
       </label>
       <div class="flex flex-col w-full h-full container border-2  bg-white rounded-3xl p-4 mt-3">
         <p class="text-2xl font-semibold">Mahasiswa</p>
-        @foreach ($user_data as $user)
-        <a href="/adminChatroom/<?= $user->id_user; ?> " class="flex flex-row border-b-2 mt-2 pb-1">
+        <ul id="resultsList" class=""></ul>
+
+
+        <script>
+          var contacts = <?php  ?> @json($user_data);
+
+          function searchContacts(query) {
+            query = query.toLowerCase(); 
+
+            if (query.length === 0) {
+              return contacts;
+            }
+
+            const matchingContacts = contacts.filter(contact => {
+              const contactName = contact.username.toLowerCase();
+
+              if (contactName.includes(query) || query.includes(contactName)) {
+                return true;
+              }
+
+              const queryWords = query.split(' ');
+              return queryWords.every(word => contactName.includes(word));
+            });
+
+            return matchingContacts;
+          }
+
+          function displayResults() {
+            const searchInput = document.getElementById('search');
+            const query = searchInput.value.trim().toLowerCase();
+            const resultsList = document.getElementById('resultsList');
+            resultsList.innerHTML = ''; 
+
+            const matchingContacts = searchContacts(query);
+
+            if (matchingContacts.length === 0) {
+              resultsList.innerHTML = '<li>Tidak ada Mahasiswa yang ditemukan.</li>';
+            } else {
+              matchingContacts.forEach(contact => {
+                const contactItemHTML = `
+              <li class="contact-item">
+              <a href="/adminChatroom/${contact.id_user}" class="flex flex-row border-b-2 mt-2 pb-1">
           <div class="container rounded-full w-16"><img src="{{ asset('images/logoUnsoed.png') }}" class="w-12 h-12 "></div>
           <div class="container flex flex-col place-content-center ml-2">
-            <p class="text-lg font-semibold text-left w-full">{{$user->username}}</p>
+            <p class="text-lg font-semibold text-left w-full">${contact.username}</p>
           </div>
           <div class="container rounded-full bg-white w-9 h-9 my-auto"><img src="{{ asset('images/logoUnsoed.png') }}"></div>
         </a>
+              </li>
+            `;
+                resultsList.innerHTML += contactItemHTML;
+              });
+            }
+          }
 
-        @endforeach
+          const searchInput = document.getElementById('search');
+          searchInput.addEventListener('input', displayResults);
+
+          // Initial display of all contacts
+          displayResults();
+        </script>
+
       </div>
 
     </div>
@@ -64,7 +116,7 @@
         <input type="text" name="message" id="message" class="w-full border-2 rounded-lg h-12 px-2">
         <button type="submit" class="bg-[#19A7CE] rounded-lg p-2 ml-4"><img src="{{ asset('icon/send.png') }}" class="h-6 w-9 mx-auto"></button>
       </form>
-      @else 
+      @else
       <img src="{{ asset('images/logoUnsoed.png') }}" class="my-auto mx-auto h-full opacity-30">
       @endif
     </div>
